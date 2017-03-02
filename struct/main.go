@@ -1,26 +1,11 @@
 package main
 
-type list struct {
-	value interface{}
-	rest  *list
-}
+import "github.com/raviqqe/argument-liveness.go/list"
 
-func newList(v interface{}, r *list) list {
-	return list{v, r}
-}
+func main() {
+	l := *list.NewList(42, nil)
 
-func (l *list) Rest() *list {
-	r := newList(42, nil)
-	l.rest = &r
-	return l.rest
-}
-
-func foo(l list) {
 	for {
 		l = *l.Rest()
 	}
-}
-
-func main() {
-	foo(newList(42, nil))
 }
