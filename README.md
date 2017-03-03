@@ -19,7 +19,7 @@ Does the program cause memory leak?
 dir | go1.7 | go1.8
 ---------|-------|------
 struct | No | No
-struct\_pointer | Yes | Yes
+struct\_pointer | No | No
 
 
 ## License
